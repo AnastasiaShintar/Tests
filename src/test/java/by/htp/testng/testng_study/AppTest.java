@@ -28,7 +28,7 @@ public class AppTest {
 	private static final String PROFILE = "#navigation > li.last > a";
 	private static final String EDITPROFILE = "#middle > div.user > div.personal > div.login > div > a";
 	private static final String PROFILEPERSONALFORM = "#profile-personal-form > div.title";
-	
+	private statiс final String ADDPHOTO = "#profile-personal-form > div.content > form > table > tbody > tr:nth-child(4) > td:nth-child(4) > input[type=\"file\"]";
 	
 	
 	
@@ -137,8 +137,7 @@ public class AppTest {
 		element.sendKeys("TASK");
 		Select selCountryOfUser = new Select(driver.findElements(By.name("personalForm.countryId")).get(0));
 		selCountryOfUser.selectByVisibleText("Беларусь");
-		element = driver.findElement(By.cssSelector(
-				"#profile-personal-form > div.content > form > table > tbody > tr:nth-child(4) > td:nth-child(4) > input[type=\"file\"]"));
+		element = driver.findElement(By.cssSelector(ADDPHOTO));
 		element.sendKeys("D:\\fhAnY2lZlxk.jpg");
 		element = driver.findElement(By.name("personalForm.about"));
 		element.sendKeys("I like bake cakes and cookies!");
