@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookstore>
+	<book id="b1">
+		<title lang="en">Harry Potter</title>
+		<price>29.99</price>
+	</book>
+	<book id="b2">
+		<title lang="en">The war and peace</title>
+		<price>39.95</price>
+	</book>
+	<book href="www.amazon.com">
+		<title lang="en">Learning XPath</title>
+		<price>10.00</price>
+		<year>2000</year>
+	</book>
+</bookstore>
