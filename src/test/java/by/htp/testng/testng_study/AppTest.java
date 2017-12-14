@@ -24,6 +24,14 @@ public class AppTest {
 
 	private static final String DRIVER_FIREFOX = "webdriver.gecko.driver";
 	private static final String DRIVER_FIREFOX_PATH = "C:\\driver\\geckodriver.exe";
+	private static final String GENERALNEW = "#title_news_block > div.b-general.ni._titlealts_ > p > a";
+	private static final String PROFILE = "#navigation > li.last > a";
+	private static final String EDITPROFILE = "#middle > div.user > div.personal > div.login > div > a";
+	private static final String PROFILEPERSONALFORM = "#profile-personal-form > div.title";
+	
+	
+	
+	
 	private WebDriver driver;
 	private WebElement element;
 
@@ -51,7 +59,7 @@ public class AppTest {
 	 System.out.println("test1");
 	
 	 driver.get("http://www.google.com");
-	 element = driver.findElement(By.xpath("//*[@id=\"lst-ib\"]"));
+	 element = driver.findElement(By.name("lst-ib"));
 	 element.sendKeys("JAVA");
 	 element.submit();
 	
@@ -71,10 +79,10 @@ public class AppTest {
 	
 	 System.out.println("test2");
 	 driver.get("http://www.tut.by");
-	 element = driver.findElement(By.cssSelector("#title_news_block > div.b-general.ni._titlealts_ > p > a"));
+	 element = driver.findElement(By.cssSelector(GENERALNEW));
 	 element.click();
-	 System.out.println(driver.findElement(By.xpath("//*[@id=\"utm_article_block\"]/div[1]/div[1]/h1/text()")));
-	 element = driver.findElement(By.id("article_body"));
+	 //System.out.println(driver.findElement(By.xpath("//*[@id=\"utm_article_block\"]/div[1]/div[1]/h1/text()")));
+	 //element = driver.findElement(By.id("article_body"));
 	
 	
 	 }
@@ -113,11 +121,11 @@ public class AppTest {
 		element.sendKeys("NastyaShintar12345");
 		element = driver.findElement(By.name("ok"));
 		element.click();
-		element = driver.findElement(By.cssSelector("#navigation > li.last > a"));
+		element = driver.findElement(By.cssSelector(PROFILE));
 		element.click();
-		element = driver.findElement(By.cssSelector("#middle > div.user > div.personal > div.login > div > a"));
+		element = driver.findElement(By.cssSelector(EDITPROFILE));
 		element.click();
-		element = driver.findElement(By.cssSelector("#profile-personal-form > div.title"));
+		element = driver.findElement(By.cssSelector(PROFILEPERSONALFORM));
 		element.click();
 		element = driver.findElement(By.name("personalForm.name"));
 		element.sendKeys("Anastasia");
